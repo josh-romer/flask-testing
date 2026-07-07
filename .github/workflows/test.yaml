@@ -5,18 +5,18 @@ jobs:
   unit-tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
 
       - name: Setup python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
           python-version: 3.11.3
 
       - name: Install tools
-        run: pip3 install -r requirements.txt
+        run: pip install -r requirements.txt
           
       - name: Test webpages
-        run: python3 tests/test_basic.py
+        run: python tests/test_basic.py
 
       - name: Test registration form
-        run: python3 tests/test_users.py
+        run: python tests/test_users.py
